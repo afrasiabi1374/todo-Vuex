@@ -1,12 +1,12 @@
 <template>
 <div class="contailner">
-    <Filter/>
     <div v-if="loading" class="row">
         <div class="spinner-grow text-warning m-auto" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
     <div v-else class="container mt-5">
+        <Filter/>
         <div class="row g-3" >
             <div v-for="task in tasks" :key="task.id" class="col-md-4">
                 <div class="card" :class="{'bg-light':task.completed}">

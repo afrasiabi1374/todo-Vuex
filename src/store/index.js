@@ -31,8 +31,23 @@ const store= createStore({
                     confirmButtonText:"OK"
                 })
             }
-
-        }
+        },
+        async filterTasks({commit},limit){
+            console.log(limit);
+            try{
+                const response = await axios.get(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}`)
+                commit('setTasks',response.data) 
+                console.log(response.data);
+                //console.log(response.data);
+            }catch(err){
+                Swal.fire({
+                    title:'Error!',
+                    text:'problem please try again',
+                    icon: "error",
+                    confirmButtonText:"OK"
+                })
+            }
+        },
     }
 })
 export default store;
