@@ -1,5 +1,7 @@
 # todo-app
 
+# سبدخرید هم توی همین ریپازیتوری هست
+
 ## Project setup
 ```
 npm install
